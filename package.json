@@ -5,10 +5,32 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "vite-build": "vite build",
+    "preview": "vite preview",
+    "build": "sass src/scss:dist/css",
+    "start": "sass --watch src/scss:dist/css & live-server"
   },
   "devDependencies": {
+    "eslint": "^8.28.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.4",
+    "prettier": "^2.8.0",
+    "sass": "^1.56.1",
     "vite": "^3.2.3"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.3"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.html": [
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ]
   }
 }
