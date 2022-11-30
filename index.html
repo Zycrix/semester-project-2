@@ -4,27 +4,37 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="dist/css/styles.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
     <title>Great deals</title>
   </head>
   <body>
     <header class="p-3 text-bg-dark">
       <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-          <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
-              <use xlink:href="#bootstrap" />
-            </svg>
-          </a>
-
-          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="#" class="nav-link px-2 text-primary">Home</a></li>
-            <li><a href="#" class="nav-link px-2 text-white">Listings</a></li>
-            <li><a href="#" class="nav-link px-2 text-white">Profile</a></li>
-            <li><a href="#" class="nav-link px-2 text-white">My Bids</a></li>
-            <li><a href="#" class="nav-link px-2 text-white">My Listings</a></li>
-          </ul>
-
-          <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+        <div class="d-flex align-items-center justify-content-center justify-content-lg-start">
+          <div class="dropdown col-3">
+            <button
+              class="dropdown-toggle btn btn-primary"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <span class="material-symbols-outlined" id="menu"> menu </span>
+            </button>
+            <ul
+              class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 dropdown-menu hidden"
+              id="menu-list"
+            >
+              <li><a href="/index.html" class="nav-link px-2 text-primary dropdown-item">Home</a></li>
+              <li><a href="#" class="nav-link px-2 text-secondary dropdown-item">Listings</a></li>
+              <li><a href="#" class="nav-link px-2 text-secondary hidden dropdown-item">Profile</a></li>
+              <li><a href="#" class="nav-link px-2 text-secondary hidden dropdown-item">My Bids</a></li>
+              <li><a href="#" class="nav-link px-2 text-secondary hidden dropdown-item">My Listings</a></li>
+            </ul>
+          </div>
+          <form class="col-6 col-lg-auto mb-lg-0 me-lg-3" role="search">
             <input
               type="search"
               class="form-control form-control-dark text-bg-dark"
@@ -33,14 +43,32 @@
             />
           </form>
 
-          <div class="text-end">
-            <button type="button" class="btn btn-outline-light me-2">Login</button>
-            <button type="button" class="btn btn-primary">Sign-up</button>
+          <div class="text-end col-3">
+            <button type="button" class="btn btn-outline-light">Login</button>
+            <button type="button" class="btn btn-primary hidden">Sign-up</button>
+            <div class="user hidden"></div>
           </div>
         </div>
       </div>
     </header>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+    <main>
+      <section class="welcome container">
+        <h1 class="fw-bold text-center mt-5">Welcome to Great Deals!</h1>
+        <div class="intro container my-5">
+          <div class="row">
+            <div>
+              <p class="w-90">
+                Welcome! Looking for a good deal? You're at the right place! Here at Great Deals we've got something for
+                everyone, have a look at our listings and find you're next great deal!
+              </p>
+            </div>
+            <div>
+              <img src="/media/pexels-ekaterina-bolovtsova-6077326.jpg" class="w-50" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/js/index.mjs"></script>
   </body>
 </html>

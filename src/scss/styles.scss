@@ -1,8 +1,12 @@
-@import "variables"; /* /src/scss/_variables.scss */
+@import "./_variables.scss"; /* /src/scss/_variables.scss */
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-$secondary: $cyan-100;
-
-.text-secondary {
-  color: red;
+.hidden {
+  display: none;
+}
+.dropdown-toggle::after {
+  all: unset;
+}
+#menu {
+  display: inline-block;
 }

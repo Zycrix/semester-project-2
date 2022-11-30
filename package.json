@@ -8,7 +8,8 @@
     "vite-build": "vite build",
     "preview": "vite preview",
     "build": "sass src/scss:dist/css",
-    "start": "sass --watch src/scss:dist/css & live-server"
+    "start": "sass --watch src/scss:dist/css",
+    "server": "live-server"
   },
   "devDependencies": {
     "eslint": "^8.28.0",
