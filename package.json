@@ -21,7 +21,8 @@
     "vite": "^3.2.3"
   },
   "dependencies": {
-    "bootstrap": "^5.2.3"
+    "bootstrap": "^5.2.3",
+    "jsdocs": "^1.0.0"
   },
   "lint-staged": {
     "*.js": [

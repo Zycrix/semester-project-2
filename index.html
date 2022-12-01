@@ -42,7 +42,6 @@
               aria-label="Search"
             />
           </form>
-
           <div class="text-end col-3">
             <button type="button" class="btn btn-outline-light">Login</button>
             <button type="button" class="btn btn-primary hidden">Sign-up</button>
@@ -52,21 +51,17 @@
       </div>
     </header>
     <main>
-      <section class="welcome container">
-        <h1 class="fw-bold text-center mt-5">Welcome to Great Deals!</h1>
-        <div class="intro container my-5">
-          <div class="row">
-            <div>
-              <p class="w-90">
-                Welcome! Looking for a good deal? You're at the right place! Here at Great Deals we've got something for
-                everyone, have a look at our listings and find you're next great deal!
-              </p>
-            </div>
-            <div>
-              <img src="/media/pexels-ekaterina-bolovtsova-6077326.jpg" class="w-50" />
-            </div>
-          </div>
-        </div>
+      <section class="hot container">
+        <h1 class="fw-bold text-center mt-5">Hot deals right now:</h1>
+        <div class="hot-container"></div>
+      </section>
+      <section class="latest">
+        <h2 class="fw-bold text-center mt-5">New posts:</h2>
+        <div class="latest-container"></div>
+      </section>
+      <section class="ending">
+        <h2 class="fw-bold text-center mt-5">Ending soon:</h2>
+        <div class="ending-container"></div>
       </section>
     </main>
     <script type="module" src="/src/js/index.mjs"></script>

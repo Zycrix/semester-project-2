@@ -1,5 +1,7 @@
-import { menu } from "./modules/menu.js";
 import "../../node_modules/bootstrap/dist/js/bootstrap.bundle.js";
-// menu();
+import { fetchAll } from "./modules/fetchAll.mjs";
+import { removeEnded } from "./modules/filters/removeEnded.mjs";
 
-console.log("asd");
+const data = await fetchAll();
+
+const endedRemoved = removeEnded(data);
