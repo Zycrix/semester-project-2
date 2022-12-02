@@ -10,3 +10,24 @@
 #menu {
   display: inline-block;
 }
+.pop-container {
+  width: 100%;
+  display: flex;
+  max-height: 70vh;
+  overflow-x: scroll;
+  padding-left: 10vw;
+  overflow-y: hidden;
+}
+.listing {
+  min-width: 80%;
+  margin-inline: 1rem;
+}
+.bids {
+  font-weight: bold;
+}
+.p-img {
+  max-height: 40vh;
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
