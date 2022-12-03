@@ -43,8 +43,8 @@
             />
           </form>
           <div class="text-end col-3">
-            <button type="button" class="btn btn-outline-light">Login</button>
-            <button type="button" class="btn btn-primary hidden">Sign-up</button>
+            <a href="/pages/login.html" type="button" class="btn btn-outline-light">Login</a>
+            <a href="pages/login.html?page=register" type="button" class="btn btn-primary hidden">Sign-up</a>
             <div class="user hidden"></div>
           </div>
         </div>
@@ -56,14 +56,32 @@
         <div class="pop-container bg-primary mx-auto"></div>
       </section>
       <section class="latest">
-        <h2 class="fw-bold text-center mt-5">New posts:</h2>
-        <div class="latest-container"></div>
+        <h2 class="fw-bold text-center my-3">New posts:</h2>
+        <div class="new-container bg-primary mx-auto"></div>
       </section>
       <section class="ending">
-        <h2 class="fw-bold text-center mt-5">Ending soon:</h2>
-        <div class="ending-container"></div>
+        <h2 class="fw-bold text-center my-3">Ending soon:</h2>
+        <div class="ending-container bg-primary mx-auto"></div>
       </section>
     </main>
+    <footer class="d-flex flex-wrap justify-content-between text-bg-dark align-items-center py-3 mt-3 border-top">
+      <p class="col-md-4 mb-0 text-muted">© 2022 Kristoffer Mikkelsen</p>
+
+      <a
+        href="/"
+        class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"
+      >
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+
+      <ul class="nav col-md-4 justify-content-end">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Listings</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 hidden text-muted">Profile</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 hidden text-muted">My bids</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 hidden text-muted">My listings</a></li>
+      </ul>
+    </footer>
     <script type="module" src="/src/js/index.mjs"></script>
   </body>
 </html>

@@ -10,7 +10,9 @@
 #menu {
   display: inline-block;
 }
-.pop-container {
+.pop-container,
+.new-container,
+.ending-container {
   width: 100%;
   display: flex;
   max-height: 70vh;
@@ -30,4 +32,7 @@
   width: 100%;
   aspect-ratio: 4/3;
   object-fit: cover;
+}
+main {
+  min-height: calc(100vh - 189px);
 }

@@ -3,6 +3,7 @@ import { fetchAll } from "./modules/fetchAll.mjs";
 import { removeEnded } from "./modules/filters/removeEnded.mjs";
 import { popFilter } from "./modules/filters/popular.mjs";
 import { listingHtml } from "./modules/listingHtml.mjs";
+import { endingFilter } from "./modules/filters/endingSoon.js";
 
 const data = await fetchAll();
 
@@ -10,6 +11,8 @@ const endedRemoved = removeEnded(data);
 
 const popular = popFilter(endedRemoved);
 
-listingHtml(popular, "pop-container");
+const ending = endingFilter(endedRemoved);
 
-console.log(data);
+listingHtml(popular, "pop-container", "pop");
+listingHtml(data, "new-container", "new");
+listingHtml(ending, "ending-container", "ending");
