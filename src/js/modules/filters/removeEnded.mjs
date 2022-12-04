@@ -12,5 +12,13 @@ export function removeEnded(data) {
     return itemEnd > current;
   });
 
+  const defaultImage = "/media/pexels-luis-del-río-15286.jpg";
+
+  filtered.forEach((e) => {
+    if (e.media.length < 1) {
+      e.media.push(defaultImage);
+    }
+  });
+
   return filtered;
 }

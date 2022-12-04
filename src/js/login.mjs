@@ -15,9 +15,8 @@ const form = document.querySelector("#login");
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  if (e.submitter.dataset.action === "register-open") {
-    showRegister();
-  } else if (e.submitter.dataset.action === "close-register") {
+  if (e.submitter.dataset.action === "register-open" || e.submitter.dataset.action === "close-register") {
+    //Toggle registration form
     showRegister();
   } else if (e.submitter.dataset.action === "register-send") {
     const body = getFormData("register");

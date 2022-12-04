@@ -18,14 +18,15 @@ export function listingHtml(data, container, type) {
 
   for (let i = 0; i < end; i++) {
     const date = new Date(data[i].created);
-    const posted = `${date.getDate()}/${date.getMonth()}-${date.getFullYear()}`;
+    const posted = `${date.getDate()}/${date.getMonth() + 1}-${date.getFullYear()}`;
 
     const remaining = timeDiff(data[i].endsAt);
 
-    const text = data[i]?.description?.slice(0, 90) || "Description missing";
+    let text = data[i]?.description?.slice(0, 90) || "Description missing";
+    text.length === 90 ? (text += "...") : text;
 
     contentContainer.innerHTML += `
-    <div class="listing bg-light my-3 d-flex flex-column justify-content-between">
+    <div class="listing bg-light my-3 d-flex flex-column justify-content-between" data-id = "${data[i].id}">
     <div id="carousel${type}${i}" class="carousel carousel-dark slide carousel-fade" data-bs-ride="carousel">
       <div class="carousel-inner${type}${i}">
 
@@ -57,6 +58,9 @@ export function listingHtml(data, container, type) {
         <p>Left</p>
       </div>
     </div>
+    <div data-id = "${data[i].id}">
+      <button class = "view btn btn-secondary w-100 rounded-0">View listing</button>
+    </div>
     </div>
     `;
     if (data[i].media.length > 0) {
@@ -66,7 +70,7 @@ export function listingHtml(data, container, type) {
         if (index === 0) {
           galleryContainer.innerHTML += `
           <div class="carousel-item active">
-            <img src=${e} class="d-block w-100 p-img" alt = "the product on auction" />
+            <img src=${e} class="d-block w-100 p-img" alt = "the product on auction" onerror = "this.src = '/media/pexels-ekaterina-bolovtsova-6077326.jpg'"/>
           </div>
           `;
         } else {

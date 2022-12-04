@@ -16,6 +16,7 @@ const popular = popFilter(endedRemoved);
 
 const ending = endingFilter(endedRemoved);
 
+console.log(endedRemoved);
 listingHtml(popular, "pop-container", "pop");
-listingHtml(data, "new-container", "new");
+listingHtml(endedRemoved, "new-container", "new");
 listingHtml(ending, "ending-container", "ending");
