@@ -1,10 +1,9 @@
 export function getFormData(type) {
-  const form = document.querySelector("#login");
   const email = document.querySelector("#email").value;
   const password = document.querySelector("#password").value;
   const name = document.querySelector("#username").value;
   const avatar = document.querySelector("#avatar").value;
-  const confirm = document.querySelector("#confirm");
+  const confirm = document.querySelector("#password-confirm").value;
 
   let body;
 

@@ -36,3 +36,8 @@
 main {
   min-height: calc(100vh - 189px);
 }
+.profile-picture {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  width: 60%;
+}
