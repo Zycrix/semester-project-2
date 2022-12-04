@@ -59,7 +59,7 @@ export function listingHtml(data, container, type) {
       </div>
     </div>
     <div data-id = "${data[i].id}">
-      <button class = "view btn btn-secondary w-100 rounded-0">View listing</button>
+      <a href = "/pages/specific.html?id=${data[i].id}"class = "view btn btn-secondary w-100 rounded-0">View listing</a>
     </div>
     </div>
     `;

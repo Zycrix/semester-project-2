@@ -9,7 +9,7 @@
 import * as urls from "./urls.mjs";
 export async function apiCall(method, endpoint, body, offset) {
   //Set url
-  let url = urls[endpoint];
+  let url = urls[endpoint] || endpoint;
 
   if (offset) {
     url += `&offset=${offset}`;

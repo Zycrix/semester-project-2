@@ -34,10 +34,21 @@
   object-fit: cover;
 }
 main {
-  min-height: calc(100vh - 189px);
+  min-height: calc(100vh - 177px);
 }
 .profile-picture {
   aspect-ratio: 1/1;
   object-fit: cover;
   width: 60%;
+}
+.carousel-container {
+  position: relative;
+}
+.tags {
+  position: absolute;
+  top: 12px;
+  z-index: 100;
+}
+.make-bid {
+  width: 90%;
 }
