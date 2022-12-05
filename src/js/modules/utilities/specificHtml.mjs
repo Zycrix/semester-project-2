@@ -2,9 +2,17 @@ import { timeDiff } from "./calcDiff.mjs";
 export function specificHtml(data) {
   const container = document.querySelector(".content-container");
 
-  const date = new Date(data.created);
+  let date = new Date(data.created);
   const posted = `${date.getDate()}/${date.getMonth() + 1}-${date.getFullYear()}`;
 
+  date = new Date(data.updated);
+  const updated = `${date.getDate()}/${date.getMonth() + 1}-${date.getFullYear()}`;
+
+  date = new Date(data.endsAt);
+  let ends = `${date.getDate()}/${date.getMonth() + 1}-${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
+  if (ends.length < 15) {
+    ends = `${date.getDate()}/${date.getMonth() + 1}-${date.getFullYear()} 0${date.getHours()}:0${date.getMinutes()}`;
+  }
   const remaining = timeDiff(data.endsAt);
 
   container.innerHTML = `
@@ -41,7 +49,8 @@ export function specificHtml(data) {
     </div>
   </div>
   <div class = "make-bid mx-auto"> 
-    <form>
+    <form id = "bid-form">
+      <label for = "bid" class = "hidden bid-error form-label my-1 w-100 text-danger">Bid must be higher than the current highest bid"</label>
       <input class = "form-control my-1 w-100" id = "bid" type = "number" name = "new-bid" placeholder = "000">
       <button class = "btn btn-primary w-100">Make a bid!</button>
     </form>
@@ -50,9 +59,47 @@ export function specificHtml(data) {
     <hr>
   </div>
   <div class = "description mx-3 mb-5">
+    <h2 class = "text-center">Description</h2>
     <p>${data.description}</p>
   </div>
-  
+  <div class="text-success">
+    <hr>
+  </div>
+  <div class = "title">
+    <h2 class = "text-center my-3">Specifications</h2>
+  </div>
+  <div class = "container">
+    <div class = "seller-container row my-3">
+      <div class = "seller-name mx-3 col">
+        <p class = "p-0 m-0">Seller:</p>
+        <p class = "fw-bold m-0 p-0">${data.seller.name}</p>
+      </div>
+      <div class = "seller-email mx-3 col">
+        <p class = "p-0 m-0">Seller email:</p>
+        <p class = "p-0 m-0 fw-bold">${data.seller.email}
+      </div>
+    </div>
+    <div class = "created-container row my-3">
+      <div class = "created mx-3 col">
+        <p class = "p-0 m-0">Created:</p>
+        <p class = "fw-bold m-0 p-0">${posted}</p>
+      </div>
+      <div class = "updated mx-3 col">
+        <p class = "p-0 m-0">Last updated:</p>
+        <p class = "p-0 m-0 fw-bold">${updated}</p>
+      </div>
+    </div>
+    <div class = "row my-3">
+      <div class = "ending mx-3 col">
+        <p class = "p-0 m-0">Ends at:</p>
+        <p class = "fw-bold m-0 p-0">${ends}</p>
+      </div>
+      <div class = "winning mx-3 col">
+        <p class = "p-0 m-0">Leading bidder:</p>
+        <p class = "p-0 m-0 fw-bold">${data.bids[data.bids.length - 1].bidderName}</p>
+      </div>
+    </div>
+  </div>
   `;
 
   if (data.media.length > 0) {

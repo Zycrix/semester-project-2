@@ -22,8 +22,8 @@ export function listingHtml(data, container, type) {
 
     const remaining = timeDiff(data[i].endsAt);
 
-    let text = data[i]?.description?.slice(0, 90) || "Description missing";
-    text.length === 90 ? (text += "...") : text;
+    let text = data[i]?.description?.slice(0, 70) || "Description missing";
+    text.length === 70 ? (text += "...") : text;
 
     contentContainer.innerHTML += `
     <div class="listing bg-light my-3 d-flex flex-column justify-content-between" data-id = "${data[i].id}">
@@ -40,14 +40,14 @@ export function listingHtml(data, container, type) {
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-    <div class="info m-3 ">
+    <div class="info mx-3">
       <h3 class="l-title text-center m-3">${data[i].title}</h3>
       <p class="date">Posted: ${posted}</p>
       <p class="l-description">
         ${text}
       </p>
     </div>
-    <div class="bids d-flex justify-content-between m-3">
+    <div class="bids d-flex justify-content-between mx-3">
       <div>
         <p class="m-0">Highest bid:</p>
         <p>${data[i].bids[data[i].bids.length - 1]?.amount || 0} Credits</p>

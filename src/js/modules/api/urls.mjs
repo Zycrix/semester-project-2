@@ -3,3 +3,4 @@ export const listings = baseUrl + "/auction/listings?_seller=true&_bids=true&sor
 export const listing = baseUrl + "/auction/listings/";
 export const register = baseUrl + "/auction/auth/register";
 export const login = baseUrl + "/auction/auth/login";
+export const profile = baseUrl + "/auction/profiles/";

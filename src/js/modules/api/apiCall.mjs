@@ -24,13 +24,12 @@ export async function apiCall(method, endpoint, body, offset) {
   };
 
   //Add authorization if the user is logged in
-  if (window.localStorage.getItem("user")) {
-    const user = JSON.parse(window.localStorage.getItem("user"));
-    const accessToken = user.accessToken;
+  if (window.localStorage.getItem("token")) {
+    const token = JSON.parse(window.localStorage.getItem("token"));
 
     options.headers = {
+      Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
-      Authorization: `Bearer ${accessToken}`,
     };
   }
 
@@ -46,6 +45,7 @@ export async function apiCall(method, endpoint, body, offset) {
 
     return result;
   } catch (e) {
+    console.log(e);
     return e;
   }
 }
