@@ -15,6 +15,7 @@ export function specificHtml(data) {
   }
   const remaining = timeDiff(data.endsAt);
 
+  console.log(data);
   container.innerHTML = `
   <div class = "carousel-container">
     <div class = "tags">
@@ -40,7 +41,7 @@ export function specificHtml(data) {
   <div class="bids d-flex justify-content-between m-3">
     <div>
       <p class="m-0">Highest bid:</p>
-      <p>${data.bids[data.bids.length - 1]?.amount || 0} Credits</p>
+      <p><em class = "bid-number">${data.bids[data.bids.length - 1]?.amount || 0}</em> Credits</p>
     </div>
     <div class="vr"></div>
     <div>
@@ -50,7 +51,7 @@ export function specificHtml(data) {
   </div>
   <div class = "make-bid mx-auto"> 
     <form id = "bid-form">
-      <label for = "bid" class = "hidden bid-error form-label my-1 w-100 text-danger">Bid must be higher than the current highest bid"</label>
+      <label for = "bid" class = "hidden bid-status form-label my-1 w-100 text-danger"></label>
       <input class = "form-control my-1 w-100" id = "bid" type = "number" name = "new-bid" placeholder = "000">
       <button class = "btn btn-primary w-100">Make a bid!</button>
     </form>
@@ -96,7 +97,7 @@ export function specificHtml(data) {
       </div>
       <div class = "winning mx-3 col">
         <p class = "p-0 m-0">Leading bidder:</p>
-        <p class = "p-0 m-0 fw-bold">${data.bids[data.bids.length - 1].bidderName}</p>
+        <p class = "p-0 m-0 fw-bold">${data.bids[data.bids.length - 1]?.bidderName || ""}</p>
       </div>
     </div>
   </div>

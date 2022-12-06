@@ -3,14 +3,19 @@ import * as urls from "./urls.mjs";
 import { loggedIn } from "../utilities/loggedIn.mjs";
 export async function makeBid(data) {
   const bid = document.querySelector("#bid").value;
-  const errorMessage = document.querySelector(".bid-error");
+  const bidStatus = document.querySelector(".bid-status");
+  const currentContainer = document.querySelector(".bid-number");
+
   const amount = Number(bid);
 
-  if (Number(bid) < data.bids[data.bids.length - 1].amount) {
-    errorMessage.classList.remove("hidden");
+  if (data.bids.length > 1 && Number(bid) < data.bids[data.bids.length - 1].amount) {
+    bidStatus.classList.remove("hidden");
+    bidStatus.innerHTML = "You're bid must be higher than the current highest bid";
+    bidStatus.classList.add("text-danger");
+    bidStatus.classList.remove("text-success");
     return false;
   } else {
-    errorMessage.classList.add("hidden");
+    bidStatus.classList.add("hidden");
   }
 
   const endpoint = urls.listing + data.id + "/bids";
@@ -22,15 +27,25 @@ export async function makeBid(data) {
       const user = JSON.parse(window.localStorage.getItem("user")).name;
       const endpoint = urls.profile + user;
       const update = await apiCall("get", endpoint);
-      console.log(update);
+      window.localStorage.setItem("user", JSON.stringify(update));
+      currentContainer.innerHTML = bid;
+      bidStatus.classList.remove("hidden");
+      bidStatus.classList.remove("text-danger");
+      bidStatus.classList.add("text-success");
+      bidStatus.innerHTML = "Success!";
       loggedIn();
+      return result;
+    } else {
+      bidStatus.classList.remove("hidden");
+      bidStatus.innerHTML = result.errors[0].message;
+      bidStatus.classList.add("text-danger");
+      bidStatus.classList.remove("text-success");
+      return false;
     }
-
-    return result;
   } catch (e) {
     console.log(e);
-    errorMessage.classList.remove("hidden");
-    errorMessage.innerHTML = e.message;
+    bidStatus.classList.remove("hidden");
+    bidStatus.innerHTML = e.message;
     return false;
   }
 }
