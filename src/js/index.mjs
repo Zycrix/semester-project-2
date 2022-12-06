@@ -5,6 +5,7 @@ import { popFilter } from "./modules/filters/popular.mjs";
 import { listingHtml } from "./modules/utilities/listingHtml.mjs";
 import { endingFilter } from "./modules/filters/endingSoon.js";
 import { loggedIn } from "./modules/utilities/loggedIn.mjs";
+import { search } from "./modules/utilities/search.mjs";
 
 loggedIn();
 
@@ -20,3 +21,12 @@ console.log(endedRemoved);
 listingHtml(popular, "pop-container", "pop");
 listingHtml(endedRemoved, "new-container", "new");
 listingHtml(ending, "ending-container", "ending");
+
+const form = document.querySelector("form");
+
+form.addEventListener("keyup", (e) => {
+  e.preventDefault();
+
+  const result = search(data);
+  console.log(result);
+});
