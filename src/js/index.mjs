@@ -9,7 +9,7 @@ import { search } from "./modules/utilities/search.mjs";
 
 loggedIn();
 
-const data = await fetchAll();
+const data = await fetchAll("activeListings");
 
 const endedRemoved = removeEnded(data);
 
@@ -24,9 +24,10 @@ listingHtml(ending, "ending-container", "ending");
 
 const form = document.querySelector("form");
 
-form.addEventListener("keyup", (e) => {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const result = search(data);
-  console.log(result);
+  window.localStorage.setItem("search", JSON.stringify(result));
+  window.location.href = `./pages/listings.html?source=search`
 });

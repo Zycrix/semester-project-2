@@ -3,7 +3,7 @@ import { timeDiff } from "./calcDiff.mjs";
  * Creates listing cards based on content array passed as argument
  * @param {Array} data Array with content from api
  * @param {String} container Target content container's class name
- * @param {String} type This is to differentiate between the carousel ids in the different listing category containers, any string can be used as long as it hasn't been used in any other listingHTML calls on the same page. This also chooses weather or not to create listings for all the data in the array or just a small showcase, to generate all use "all", any other word will make it generate 10 listings
+ * @param {String} type This is to differentiate between the carousel ids in the different listing category containers, any string can be used as long as it hasn't been used in any other listingHTML calls on the same page. This also chooses weather or not to create listings for all the data in the array or just a small showcase, to generate all use "all", any other string will generate 10 listings
  */
 export function listingHtml(data, container, type) {
   let end;
