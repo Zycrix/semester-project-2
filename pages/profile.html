@@ -28,8 +28,8 @@
               id="menu-list"
             >
               <li><a href="/index.html" class="nav-link px-2 text-secondary dropdown-item">Home</a></li>
-              <li><a href="#" class="nav-link px-2 text-secondary dropdown-item">Listings</a></li>
-              <li><a href="#" class="nav-link px-2 text-secondary hidden dropdown-item">Profile</a></li>
+              <li><a href="/pages/listings.html" class="nav-link px-2 text-secondary dropdown-item">Listings</a></li>
+              <li><a href="/pages/profile.html" class="nav-link px-2 text-primary hidden dropdown-item">Profile</a></li>
               <li><a href="#" class="nav-link px-2 text-secondary hidden dropdown-item">My Bids</a></li>
               <li><a href="#" class="nav-link px-2 text-secondary hidden dropdown-item">My Listings</a></li>
             </ul>
@@ -68,7 +68,53 @@
         </div>
       </div>
     </header>
-    <main></main>
+    <main>
+      <div class = "profile-container">
+        
+      </div>
+      <div class = "content-container">
+        
+      </div>
+    </main>
+    <div class = "position-fixed bottom-1 start-84 ratio ratio-1x1 w-10 hidden">
+      <button type = "button" class = "material-symbols-outlined btn text-center btn-secondary rounded-circle" data-bs-toggle="modal" data-bs-target="#new-listing">add</button>
+    </div>
+    <div class="modal fade" id="new-listing" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="modal-title">Create a new listing</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class = "new-listing-form">
+              <label for = "title" class = "form-label">Title(Required):</label>
+              <input id = "title" class = "form-control" type = "text">
+              <div id="title-status-message" class="form-text fs-5 hidden"></div>
+
+              <label for = "description" class = "form-label">Description:</label>
+              <textarea id = "description" class = "form-control" type = "text"></textarea>
+
+              <label for = "tags" class = "form-label">Tags:</label>
+              <input id = "tags" class = "form-control" type = "text">
+
+              <label for = "media" class = "form-label">Images:</label>
+              <input id = "media" class = "form-control" type = "url">
+
+              <label for = "end-date" class = "form-label">Ending date:</label>
+              <input id = "end-date" class = "form-control" type = "date">
+
+              <label for = "end-time" class = "form-label">Ending time(Required):</label>
+              <input id = "end-time" class = "form-control" type = "time">
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary submit-avatar">Post listing</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <footer class="d-flex flex-wrap justify-content-between text-bg-dark align-items-center py-3 mt-3 border-top">
       <p class="col-md-4 mb-0 text-muted">© 2022 Kristoffer Mikkelsen</p>
 
@@ -87,6 +133,6 @@
         <li class="nav-item"><a href="#" class="nav-link px-2 hidden text-muted">My listings</a></li>
       </ul>
     </footer>
-    <script type="module" src="/src/js/index.mjs"></script>
+    <script type="module" src="/src/js/profile.mjs"></script>
   </body>
 </html>

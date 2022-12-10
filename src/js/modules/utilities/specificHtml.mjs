@@ -73,7 +73,7 @@ export function specificHtml(data) {
     <div class = "seller-container row my-3">
       <div class = "seller-name mx-3 col">
         <p class = "p-0 m-0">Seller:</p>
-        <p class = "fw-bold m-0 p-0">${data.seller.name}</p>
+        <a href = "/pages/profile.html?name=${data.seller.name}" class = "fw-bold m-0 p-0">${data.seller.name}</a>
       </div>
       <div class = "seller-email mx-3 col">
         <p class = "p-0 m-0">Seller email:</p>

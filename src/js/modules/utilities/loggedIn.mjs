@@ -4,11 +4,14 @@ export function loggedIn() {
 
     //Show the complete menu
     const menuItems = document.querySelectorAll("#menu-list li a");
+    const listingButton = document.querySelector(".position-fixed");
 
     menuItems.forEach((e) => {
       e.classList.remove("hidden");
     });
 
+    listingButton.classList.remove("hidden");
+    
     //Show profile icon and user menu
     const loginButtons = document.querySelector(".login-buttons");
     const profileContainer = document.querySelector(".user");

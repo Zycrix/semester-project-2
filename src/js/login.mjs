@@ -3,6 +3,20 @@ import { showRegister } from "./modules/utilities/showRegister.mjs";
 import { getFormData } from "./modules/utilities/getFormData.mjs";
 import validate from "./modules/utilities/validate.mjs";
 import { apiCall } from "./modules/api/apiCall.mjs";
+import { search } from "./modules/utilities/search.mjs";
+
+const data = await apiCall("get", "listings")
+
+//Search function 
+const searchForm = document.querySelector("form");
+
+searchForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const result = search(data);
+  window.localStorage.setItem("search", JSON.stringify(result));
+  window.location.href = `/pages/listings.html?source=search`
+});
 
 //Check if the user was sent trough the register button
 const queryString = document.location.search;

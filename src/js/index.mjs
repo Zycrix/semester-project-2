@@ -9,7 +9,15 @@ import { search } from "./modules/utilities/search.mjs";
 
 loggedIn();
 
-const data = await fetchAll("activeListings");
+let data;
+
+if(!window.localStorage.getItem("data")){
+  data = await fetchAll("activeListings");
+  window.localStorage.setItem("data", JSON.stringify(data));
+}else {
+  data = JSON.parse(window.localStorage.getItem("data"));
+}
+
 
 const endedRemoved = removeEnded(data);
 
@@ -22,12 +30,4 @@ listingHtml(popular, "pop-container", "pop");
 listingHtml(endedRemoved, "new-container", "new");
 listingHtml(ending, "ending-container", "ending");
 
-const form = document.querySelector("form");
-
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const result = search(data);
-  window.localStorage.setItem("search", JSON.stringify(result));
-  window.location.href = `./pages/listings.html?source=search`
-});
+search(data);

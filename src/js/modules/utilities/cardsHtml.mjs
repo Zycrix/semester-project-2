@@ -1,16 +1,18 @@
 export function createCards(data){
   const container = document.querySelector(".content-container");
-
+  let count = data.length < 20 ? data.length : 20;
+  console.log(count)
   console.log(data)
-  for(let i = 0; i < data.length; i++){
+
+  for(let i = 0; i < count; i++){
     console.log(i)
     const date = new Date(data[i].created);
     const posted = `${date.getDate()}/${date.getMonth() + 1}-${date.getFullYear()}`;
 
     container.innerHTML += `
-      <div class = "card m-3 test" data-id = "${data[i].id}">
-        <img src = "${data[i].media[0] || ''}" class = "card-img" alt = "product image" onerror = "this.media = '../media/pexels-luis-del-río-15286.jpg'">
-        <div class = "card-img-overlay test text-light">
+      <div class = "card m-3">
+        <img src = "${data[i].media[0] || ''}" class = "card-img" alt = "product image" onerror = "this.src = '../media/pexels-luis-del-río-15286.jpg'">
+        <div class = "card-img-overlay test text-light" data-id = "${data[i].id}">
           <h2 class = "card-title">${data[i].title}</h2>
           <p class = "card-text">Posted:</p>
           <p class = "card-text">${posted}</p>
@@ -24,14 +26,23 @@ export function createCards(data){
   const cards = document.querySelectorAll(".test")
   cards.forEach((card)=>{
     card.addEventListener("click",(e)=>{
-
-      const id = e.path.forEach((a)=>{
-        // console.log(a.dataset?.id)
-        if(a.dataset?.id !== undefined){
-          return a.dataset.id;
-        }
-      }) 
-      console.log(id)
+      let id;
+      e.path.forEach((e, i)=>{
+        if(e.dataset?.id !== undefined){
+          console.log(i)
+          id = e.dataset.id;
+        } 
+      })
+      
+      if(id){
+        window.location.href = `/pages/specific.html?id=${id}`
+      }
     })
+
+    if(count < data.length){
+      container.innerHTML += `
+      <button class = "btn btn-primary w-100">Load more</button>
+      `
+    }
   })
 }
