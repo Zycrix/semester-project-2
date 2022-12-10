@@ -1,10 +1,19 @@
-export function createCards(data){
+export function createCards(data, counter, index){
   const container = document.querySelector(".content-container");
-  let count = data.length < 20 ? data.length : 20;
-  console.log(count)
-  console.log(data)
+  let count;
 
-  for(let i = 0; i < count; i++){
+  if(!counter){
+    count = data.length < 20 ? data.length : 20;
+  }else{
+    count = counter;
+  }
+
+  let i = index !== undefined ? index : 0;
+
+  console.log("count:" + `${count}`)
+  console.log(`index: ${i}`)
+
+  for(i; i < count; i++){
     console.log(i)
     const date = new Date(data[i].created);
     const posted = `${date.getDate()}/${date.getMonth() + 1}-${date.getFullYear()}`;
@@ -39,10 +48,20 @@ export function createCards(data){
       }
     })
 
-    if(count < data.length){
-      container.innerHTML += `
-      <button class = "btn btn-primary w-100">Load more</button>
-      `
-    }
   })
+  if(count < data.length){
+    count += 20;
+
+    container.innerHTML += `
+    <button id = "load" class = "btn btn-primary w-50 mx-auto my-3 d-block">Load more</button>
+    `
+    const loadButton = document.querySelector("#load");
+
+    loadButton.addEventListener("click", (e)=>{
+      loadButton.remove();
+      createCards(data, count, i);
+    })
+  }
+  console.log("count:" + `${count}`)
+  console.log(`index: ${i}`)
 }
