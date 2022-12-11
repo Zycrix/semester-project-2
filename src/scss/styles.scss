@@ -66,7 +66,7 @@ main {
   all: unset;
 }
 .image-height-fix{
-  min-height: 30vh;
+  min-height: 40vh;
 }
 
 @include media-breakpoint-up(sm){
@@ -82,6 +82,9 @@ main {
   .ending-container{
     padding-left: 1rem;
   }
+  .card{
+    width: 40% !important;
+  }
 }
 @include media-breakpoint-up(md){
   .listing{
@@ -89,6 +92,13 @@ main {
   }
   .profile-picture{
     width:50% !important;
+  }
+  .card{
+    width:15rem !important;
+    &.card img{
+      object-fit:cover;
+      aspect-ratio: unset;
+    }
   }
 }
 @include media-breakpoint-up(lg){
@@ -125,5 +135,8 @@ main {
   .new-listing-button{
     width: 5%;
     left: 79% !important;
+  }
+  .profile-dropdown{
+    transform: translate(165px, 75px) !important;
   }
 }

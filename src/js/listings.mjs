@@ -1,5 +1,6 @@
 import "../../node_modules/bootstrap/dist/js/bootstrap.bundle.js";
 import { fetchAll } from "./modules/api/fetchAll.mjs";
+import { removeEnded } from "./modules/filters/removeEnded.mjs";
 import { createCards } from "./modules/utilities/cardsHtml.mjs";
 import { loggedIn } from "./modules/utilities/loggedIn.mjs";
 import { search } from "./modules/utilities/search.mjs";
@@ -11,6 +12,7 @@ const params = new URLSearchParams(query);
 const source = params.get("searchTerm")
 
 const result = await fetchAll("activeListings");
+const data = removeEnded(result);
 
 if(source){
   console.log("Search")
@@ -19,7 +21,7 @@ if(source){
   createCards(searchResult)
 }else{
   console.log("All")
-  createCards(result);
+  createCards(data);
 };
 
 search(result);
