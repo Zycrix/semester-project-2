@@ -26,7 +26,7 @@ export function listingHtml(data, container, type) {
     text.length === 70 ? (text += "...") : text;
 
     contentContainer.innerHTML += `
-    <div class="listing bg-light my-3 d-flex flex-column justify-content-between" data-id = "${data[i].id}">
+    <div class="listing md-mw-50 bg-light my-3 d-flex flex-column justify-content-between" data-id = "${data[i].id}">
     <div id="carousel${type}${i}" class="carousel carousel-dark slide carousel-fade" data-bs-ride="carousel">
       <div class="carousel-inner${type}${i}">
 

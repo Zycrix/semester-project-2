@@ -13,9 +13,12 @@ const source = params.get("searchTerm")
 const result = await fetchAll("activeListings");
 
 if(source){
+  console.log("Search")
   const searchResult = JSON.parse(window.localStorage.getItem("search"));
+  console.log(searchResult)
   createCards(searchResult)
 }else{
+  console.log("All")
   createCards(result);
 };
 

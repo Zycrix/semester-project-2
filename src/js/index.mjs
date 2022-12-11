@@ -18,7 +18,6 @@ if(!window.localStorage.getItem("data")){
   data = JSON.parse(window.localStorage.getItem("data"));
 }
 
-
 const endedRemoved = removeEnded(data);
 
 const popular = popFilter(endedRemoved);

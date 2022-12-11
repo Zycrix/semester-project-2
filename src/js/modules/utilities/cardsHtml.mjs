@@ -1,3 +1,9 @@
+/**
+ * Function to create the html for the listings cards on the "All listings" page
+ * @param {Array} data Array with listing details to build cards with
+ * @param {number} counter Counter for the loop, not applicable unless an offset is needed 
+ * @param {number} index Index for the for loop, not applicable unless offset is needed 
+ */
 export function createCards(data, counter, index){
   const container = document.querySelector(".content-container");
   let count;
@@ -10,18 +16,15 @@ export function createCards(data, counter, index){
 
   let i = index !== undefined ? index : 0;
 
-  console.log("count:" + `${count}`)
-  console.log(`index: ${i}`)
-
   for(i; i < count; i++){
-    console.log(i)
     const date = new Date(data[i].created);
     const posted = `${date.getDate()}/${date.getMonth() + 1}-${date.getFullYear()}`;
 
     container.innerHTML += `
-      <div class = "card m-3">
-        <img src = "${data[i].media[0] || ''}" class = "card-img" alt = "product image" onerror = "this.src = '../media/pexels-luis-del-río-15286.jpg'">
-        <div class = "card-img-overlay test text-light" data-id = "${data[i].id}">
+    <a href = "/pages/specific.html?id=${data[i].id}" class = "unset">
+      <div class = "card m-3 rounded">
+        <img src = "${data[i].media[0] || ''}" class = "image-height-fix" alt = "product image" onerror = "this.src = '../media/pexels-luis-del-río-15286.jpg'">
+        <div class = "card-img-overlay overlay text-light" data-id = "${data[i].id}">
           <h2 class = "card-title">${data[i].title}</h2>
           <p class = "card-text">Posted:</p>
           <p class = "card-text">${posted}</p>
@@ -29,26 +32,9 @@ export function createCards(data, counter, index){
           <p class = "card-text">${data[i].bids[data[i].bids.length -1]?.amount + "Credits" || "0 bids yet"}</p>
         </div>
       </div>
+      </a>
     `
   }
-
-  const cards = document.querySelectorAll(".test")
-  cards.forEach((card)=>{
-    card.addEventListener("click",(e)=>{
-      let id;
-      e.path.forEach((e, i)=>{
-        if(e.dataset?.id !== undefined){
-          console.log(i)
-          id = e.dataset.id;
-        } 
-      })
-      
-      if(id){
-        window.location.href = `/pages/specific.html?id=${id}`
-      }
-    })
-
-  })
   if(count < data.length){
     count += 20;
 
@@ -62,6 +48,4 @@ export function createCards(data, counter, index){
       createCards(data, count, i);
     })
   }
-  console.log("count:" + `${count}`)
-  console.log(`index: ${i}`)
 }

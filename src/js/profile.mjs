@@ -10,15 +10,9 @@ import { search } from "./modules/utilities/search.mjs";
 loggedIn();
 
 //Search function 
-const form = document.querySelector("form");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const result = search(data);
-  window.localStorage.setItem("search", JSON.stringify(result));
-  window.location.href = `./pages/listings.html?source=search`
-});
+const data = await apiCall("get", "listings");
+search(data);
 
 //check if page should display logged in user's profile or another user's profile
 const query = new URLSearchParams(document.location.search);

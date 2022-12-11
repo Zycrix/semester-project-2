@@ -23,12 +23,13 @@
   min-width: 80%;
   margin-inline: 1rem;
   max-height: 70vh;
+  overflow: hidden;
 }
 .bids {
   font-weight: bold;
 }
 .p-img {
-  max-height: 40vh;
+  max-height: 30vh;
   width: 100%;
   aspect-ratio: 4/3;
   object-fit: cover;
@@ -54,10 +55,75 @@ main {
 .make-bid {
   width: 90%;
 }
-.test{
+.overlay{
   background-color: rgba(0, 0, 0, .4);
 }
 .w-10{
   width: 15%;
   z-index: 100;
+}
+.unset{
+  all: unset;
+}
+.image-height-fix{
+  min-height: 30vh;
+}
+
+@include media-breakpoint-up(sm){
+  .listing{
+    min-width: 50%;
+  }
+  .new-listing-button{
+    width: 10%;
+    left: 89% !important;
+  }
+  .pop-container,
+  .new-container,
+  .ending-container{
+    padding-left: 1rem;
+  }
+}
+@include media-breakpoint-up(md){
+  .listing{
+    min-width:35%;
+  }
+  .profile-picture{
+    width:50% !important;
+  }
+}
+@include media-breakpoint-up(lg){
+  .listing{
+    min-width: 30%;
+  }
+  .profile-picture{
+    width:30% !important;
+  }
+  .profile-dropdown{
+    transform: translate(75px, 75px) !important;
+  }
+  .new-listing-button{
+    width: 5%;
+    left: 94% !important;
+  }
+}
+@include media-breakpoint-up(xl){
+  .listing{
+    min-width: 20%;
+  }
+  .profile-picture{
+    width:20% !important;
+  }
+  .profile-dropdown{
+    transform: translate(120px, 60px) !important;
+  }
+}
+@include media-breakpoint-up(xxl){
+  main{
+    width: 70%;
+    margin: 0 auto;
+  }
+  .new-listing-button{
+    width: 5%;
+    left: 79% !important;
+  }
 }

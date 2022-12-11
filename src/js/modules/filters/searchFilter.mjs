@@ -3,13 +3,13 @@ export function searchFilter(term, data) {
 
   const filtered = copy.filter((e) => {
     return (
-      e.id.includes(term) ||
-      e.created.includes(term) ||
-      e.description?.includes(term) ||
-      e.id.includes(term) ||
-      e.seller.name.includes(term) ||
-      e.seller.email.includes(term) ||
-      e.title.includes(term)
+      e.id.toLowerCase().includes(term.toLowerCase()) ||
+      e.created.toLowerCase().includes(term.toLowerCase()) ||
+      e.description?.toLowerCase().includes(term.toLowerCase()) ||
+      e.id.toLowerCase().includes(term.toLowerCase()) ||
+      e.seller.name.toLowerCase().includes(term.toLowerCase()) ||
+      e.seller.email.toLowerCase().includes(term.toLowerCase()) ||
+      e.title.toLowerCase().includes(term.toLowerCase())
     );
   });
   return filtered;
