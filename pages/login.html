@@ -13,7 +13,7 @@
   <body>
     <header class="p-3 text-bg-dark">
       <div class="container">
-        <div class="d-flex align-items-center justify-content-center justify-content-lg-start">
+        <div class="d-flex align-items-center justify-content-center lg-w-50">
           <div class="dropdown col-3">
             <button
               class="dropdown-toggle btn btn-primary"
@@ -29,12 +29,12 @@
             >
               <li><a href="/index.html" class="nav-link px-2 text-secondary dropdown-item">Home</a></li>
               <li><a href="/pages/listings.html" class="nav-link px-2 text-secondary dropdown-item">Listings</a></li>
-              <li><a href="#" class="nav-link px-2 text-secondary hidden dropdown-item">Profile</a></li>
+              <li><a href="/pages/profile.html" class="nav-link px-2 text-secondary hidden dropdown-item">Profile</a></li>
               <li><a href="#" class="nav-link px-2 text-secondary hidden dropdown-item">My Bids</a></li>
               <li><a href="#" class="nav-link px-2 text-secondary hidden dropdown-item">My Listings</a></li>
             </ul>
           </div>
-          <form class="col-6 col-lg-auto mb-lg-0 me-lg-3" role="search">
+          <form class="col-6" role="search">
             <input
               type="search"
               class="form-control form-control-dark text-bg-dark"
@@ -44,14 +44,31 @@
             />
           </form>
           <div class="text-end col-3">
-            <button type="button" class="btn btn-outline-light">Login</button>
-            <button type="button" class="btn btn-primary hidden">Sign-up</button>
-            <div class="user hidden"></div>
+            <div class="login-buttons">
+              <a href="/pages/login.html" type="button" class="btn btn-outline-light">Login</a>
+              <a href="pages/login.html?page=register" type="button" class="btn btn-primary hidden">Sign-up</a>
+            </div>
+            <div class="user hidden justify-content-end">
+              <div class="dropdown">
+                <a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="" alt="Profile picture" class="hidden profile-picture rounded-circle md-w-50" />
+                </a>
+                <ul class="dropdown-menu py-0 profile-dropdown">
+                  <div class="bg-primary rounded-top">
+                    <li>
+                      <span class="dropdown-item">Credits:</span>
+                    </li>
+                    <li><span class="dropdown-item credits-container"></span></li>
+                  </div>
+                  <li><span class="dropdown-item" id="log-out">Log Out</span></li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </header>
-    <main>
+    <main class = "login-container">
       <h1 class="text-center my-3 title">Log in</h1>
       <p class="status fs-4 text-center"></p>
       <form class="w-75 mx-auto" id="login">
@@ -131,24 +148,9 @@
         </div>
       </div>
     </div>
-    <footer class="d-flex flex-wrap justify-content-between text-bg-dark align-items-center py-3 mt-3 border-top">
-      <p class="col-md-4 mb-0 text-muted">© 2022 Kristoffer Mikkelsen</p>
-
-      <a
-        href="/"
-        class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"
-      >
-        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-      </a>
-
-      <ul class="nav col-md-4 justify-content-end">
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Listings</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 hidden text-muted">Profile</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 hidden text-muted">My bids</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 hidden text-muted">My listings</a></li>
-      </ul>
+    <footer class="d-flex justify-content-center text-bg-dark align-items-center py-3 mt-3 ">
+      <p class="mb-0 text-muted">© 2022 Kristoffer Mikkelsen</p>
     </footer>
-    <script type="module" src="../src/js/login.mjs"></script>
+    <script type="module" src="/src/js/login.mjs"></script>
   </body>
 </html>

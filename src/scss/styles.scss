@@ -29,13 +29,13 @@
   font-weight: bold;
 }
 .p-img {
-  max-height: 30vh;
+  max-height: 40vh;
   width: 100%;
   aspect-ratio: 4/3;
   object-fit: cover;
 }
 main {
-  min-height: calc(100vh - 177px);
+  min-height: calc(100vh - 163px);
 }
 .profile-picture, .profile-image {
   aspect-ratio: 1/1;
@@ -66,7 +66,12 @@ main {
   all: unset;
 }
 .image-height-fix{
-  min-height: 40vh;
+  height: 40vh;
+  object-fit: cover;
+}
+.profile-cards{
+  width: 90%;
+  margin: 0 auto;
 }
 
 @include media-breakpoint-up(sm){
@@ -85,6 +90,20 @@ main {
   .card{
     width: 40% !important;
   }
+  .profile-container{
+    width: 80%;
+    margin: 0 auto;
+  }
+  .profile-cards{
+    width: 80%;
+  }
+  .specific-container{
+    width: 90%;
+    margin: 0 auto;
+  }
+  .p-img{
+    max-height:50vh;
+  }
 }
 @include media-breakpoint-up(md){
   .listing{
@@ -100,6 +119,13 @@ main {
       aspect-ratio: unset;
     }
   }
+  .profile-container{
+    width:50%;
+  }
+  .specific-container{
+    width: 70%;
+  }
+
 }
 @include media-breakpoint-up(lg){
   .listing{
@@ -115,6 +141,17 @@ main {
     width: 5%;
     left: 94% !important;
   }
+  .profile-divider{
+    width:80%;
+    margin: 0 auto;
+  }
+  .specific-container{
+    width: 60%;
+  }
+  .login-container{
+    width:80%;
+    margin: 0 auto;
+  }
 }
 @include media-breakpoint-up(xl){
   .listing{
@@ -125,6 +162,18 @@ main {
   }
   .profile-dropdown{
     transform: translate(120px, 60px) !important;
+  }
+  .profile-container{
+    width:30%;
+  }
+  .profile-cards{
+    width:100%;
+  }
+  .specific-container{
+    width: 50%;
+  }
+  .login-container{
+    width:60%;
   }
 }
 @include media-breakpoint-up(xxl){
@@ -138,5 +187,11 @@ main {
   }
   .profile-dropdown{
     transform: translate(165px, 75px) !important;
+  }
+  .profile-divider{
+    width:100%;
+  }
+  .login-container{
+    width:40%;
   }
 }

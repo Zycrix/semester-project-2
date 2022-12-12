@@ -22,9 +22,6 @@ export async function buildProfile(data, edit){
     </div>
     </div>
   </div>
-  <div class="text-success">
-  <hr>
-</div>
   `
   if(edit){
     const profileImageContainer = document.querySelector(".profile-image-container");

@@ -1,7 +1,7 @@
 export function loggedIn() {
   if (window.localStorage.getItem("token")) {
     const user = JSON.parse(window.localStorage.getItem("user"));
-
+  
     //Show the complete menu
     const menuItems = document.querySelectorAll("#menu-list li a");
     const listingButton = document.querySelector(".position-fixed");

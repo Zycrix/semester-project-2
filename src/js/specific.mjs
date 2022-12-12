@@ -5,13 +5,12 @@ import * as urls from "./modules/api/urls.mjs";
 import { specificHtml } from "./modules/utilities/specificHtml.mjs";
 import { makeBid } from "./modules/api/makeBid.mjs";
 import { search } from "./modules/utilities/search.mjs";
-
-const data = await apiCall("get", "listings");
+console.log("start")
 //Check if the user is logged in and make adjustments
 loggedIn();
 
 //Search function 
-
+const data = await apiCall("get", "listings");
 search(data);
 
 //Get listing id
@@ -22,7 +21,7 @@ const id = queryString.get("id");
 const endpoint = urls.listing + id + "?&_bids=true&_seller=true";
 
 const result = await apiCall("get", endpoint);
-
+console.log(result)
 //Build the page
 specificHtml(result);
 

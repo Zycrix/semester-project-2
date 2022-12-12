@@ -23,12 +23,11 @@ if(!name){
   const user = JSON.parse(window.localStorage.getItem("user"));
   name = user.name
 }
-
 //Get profile object from api
 const profileEndpoint = urls.profile + name + "/listings?_bids=true";
 const profile = await apiCall("get", urls.profile + name)
 const profileListings = await apiCall("get", profileEndpoint);
-
+console.log(profile)
 //Build profile info and profile listings
 buildProfile(profile, edit);
 createCards(profileListings);

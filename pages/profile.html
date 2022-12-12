@@ -13,7 +13,7 @@
   <body>
     <header class="p-3 text-bg-dark">
       <div class="container">
-        <div class="d-flex align-items-center justify-content-center justify-content-lg-start">
+        <div class="d-flex align-items-center justify-content-center lg-w-50">
           <div class="dropdown col-3">
             <button
               class="dropdown-toggle btn btn-primary"
@@ -34,7 +34,7 @@
               <li><a href="#" class="nav-link px-2 text-secondary hidden dropdown-item">My Listings</a></li>
             </ul>
           </div>
-          <form class="col-6 col-lg-auto mb-lg-0 me-lg-3" role="search">
+          <form class="col-6" role="search">
             <input
               type="search"
               class="form-control form-control-dark text-bg-dark"
@@ -51,9 +51,9 @@
             <div class="user hidden justify-content-end">
               <div class="dropdown">
                 <a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <img src="" alt="Profile picture" class="hidden profile-picture rounded-circle" />
+                  <img src="" alt="Profile picture" class="hidden profile-picture rounded-circle md-w-50" />
                 </a>
-                <ul class="dropdown-menu py-0">
+                <ul class="dropdown-menu py-0 profile-dropdown">
                   <div class="bg-primary rounded-top">
                     <li>
                       <span class="dropdown-item">Credits:</span>
@@ -72,12 +72,15 @@
       <div class = "profile-container">
         
       </div>
-      <div class = "content-container">
+      <div class="text-dark profile-divider">
+        <hr>
+      </div>
+      <div class = "content-container profile-cards d-flex flex-wrap justify-content-center">
         
       </div>
     </main>
-    <div class = "position-fixed bottom-1 start-84 ratio ratio-1x1 w-10 hidden">
-      <button type = "button" class = "material-symbols-outlined btn text-center btn-secondary rounded-circle" data-bs-toggle="modal" data-bs-target="#new-listing">add</button>
+    <div class = "position-fixed bottom-1 start-84 ratio ratio-1x1 w-10 hidden new-listing-button">
+      <button type = "button" class = "material-symbols-outlined btn text-center btn-info rounded-circle" data-bs-toggle="modal" data-bs-target="#new-listing">add</button>
     </div>
     <div class="modal fade" id="new-listing" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog">
@@ -115,23 +118,8 @@
         </div>
       </div>
     </div>
-    <footer class="d-flex flex-wrap justify-content-between text-bg-dark align-items-center py-3 mt-3 border-top">
-      <p class="col-md-4 mb-0 text-muted">© 2022 Kristoffer Mikkelsen</p>
-
-      <a
-        href="/"
-        class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"
-      >
-        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-      </a>
-
-      <ul class="nav col-md-4 justify-content-end">
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Listings</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 hidden text-muted">Profile</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 hidden text-muted">My bids</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 hidden text-muted">My listings</a></li>
-      </ul>
+    <footer class="d-flex justify-content-center text-bg-dark align-items-center py-3 mt-3 ">
+      <p class="mb-0 text-muted">© 2022 Kristoffer Mikkelsen</p>
     </footer>
     <script type="module" src="/src/js/profile.mjs"></script>
   </body>
