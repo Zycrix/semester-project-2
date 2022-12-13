@@ -1,0 +1,197 @@
+@import "./_variables.scss"; /* /src/scss/_variables.scss */
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+.hidden {
+  display: none;
+}
+.dropdown-toggle::after {
+  all: unset;
+}
+#menu {
+  display: inline-block;
+}
+.pop-container,
+.new-container,
+.ending-container {
+  width: 100%;
+  display: flex;
+  max-height: 70vh;
+  overflow-x: scroll;
+  padding-left: 10vw;
+}
+.listing {
+  min-width: 80%;
+  margin-inline: 1rem;
+  max-height: 70vh;
+  overflow: hidden;
+}
+.bids {
+  font-weight: bold;
+}
+.p-img {
+  max-height: 40vh;
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+main {
+  min-height: calc(100vh - 163px);
+}
+.profile-picture, .profile-image {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+    &.profile-picture{
+      width: 60%;
+    }
+}
+.carousel-container {
+  position: relative;
+}
+.tags {
+  position: absolute;
+  top: 12px;
+  z-index: 100;
+}
+.make-bid {
+  width: 90%;
+}
+.overlay{
+  background-color: rgba(0, 0, 0, .4);
+}
+.w-10{
+  width: 15%;
+  z-index: 100;
+}
+.unset{
+  all: unset;
+}
+.image-height-fix{
+  height: 40vh;
+  object-fit: cover;
+}
+.profile-cards{
+  width: 90%;
+  margin: 0 auto;
+}
+
+@include media-breakpoint-up(sm){
+  .listing{
+    min-width: 50%;
+  }
+  .new-listing-button{
+    width: 10%;
+    left: 89% !important;
+  }
+  .pop-container,
+  .new-container,
+  .ending-container{
+    padding-left: 1rem;
+  }
+  .card{
+    width: 40% !important;
+  }
+  .profile-container{
+    width: 80%;
+    margin: 0 auto;
+  }
+  .profile-cards{
+    width: 80%;
+  }
+  .specific-container{
+    width: 90%;
+    margin: 0 auto;
+  }
+  .p-img{
+    max-height:50vh;
+  }
+}
+@include media-breakpoint-up(md){
+  .listing{
+    min-width:35%;
+  }
+  .profile-picture{
+    width:50% !important;
+  }
+  .card{
+    width:15rem !important;
+    &.card img{
+      object-fit:cover;
+      aspect-ratio: unset;
+    }
+  }
+  .profile-container{
+    width:50%;
+  }
+  .specific-container{
+    width: 70%;
+  }
+
+}
+@include media-breakpoint-up(lg){
+  .listing{
+    min-width: 30%;
+  }
+  .profile-picture{
+    width:30% !important;
+  }
+  .profile-dropdown{
+    transform: translate(75px, 75px) !important;
+  }
+  .new-listing-button{
+    width: 5%;
+    left: 94% !important;
+  }
+  .profile-divider{
+    width:80%;
+    margin: 0 auto;
+  }
+  .specific-container{
+    width: 60%;
+  }
+  .login-container{
+    width:80%;
+    margin: 0 auto;
+  }
+}
+@include media-breakpoint-up(xl){
+  .listing{
+    min-width: 20%;
+  }
+  .profile-picture{
+    width:20% !important;
+  }
+  .profile-dropdown{
+    transform: translate(120px, 60px) !important;
+  }
+  .profile-container{
+    width:30%;
+  }
+  .profile-cards{
+    width:100%;
+  }
+  .specific-container{
+    width: 50%;
+  }
+  .login-container{
+    width:60%;
+  }
+}
+@include media-breakpoint-up(xxl){
+  main{
+    width: 70%;
+    margin: 0 auto;
+  }
+  .new-listing-button{
+    width: 5%;
+    left: 79% !important;
+  }
+  .profile-dropdown{
+    transform: translate(165px, 75px) !important;
+  }
+  .profile-divider{
+    width:100%;
+  }
+  .login-container{
+    width:40%;
+  }
+}
