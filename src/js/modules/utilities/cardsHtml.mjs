@@ -23,7 +23,7 @@ export function createCards(data, counter, index){
     container.innerHTML += `
     <div class = "card m-3 rounded w-100">
       <img src = "${data[i].media[0] || ''}" class = "image-height-fix" alt = "product image" onerror = "this.src = '../media/pexels-luis-del-río-15286.jpg'">
-      <a href = "../pages/specific.html?id=${data[i].id}" class = "unset">
+      <a href = "pages/specific.html?id=${data[i].id}" class = "unset">
         <div class = "card-img-overlay overlay text-light" data-id = "${data[i].id}">
           <h2 class = "card-title">${data[i].title}</h2>
           <p class = "card-text">Posted:</p>
