@@ -55,7 +55,7 @@ form.addEventListener("submit", async (e) => {
         delete result.accessToken;
         localStorage.setItem("token", JSON.stringify(token));
         localStorage.setItem("user", JSON.stringify(result));
-        window.location.href = "/index.html";
+        window.location.href = "../index.html";
       } else {
         const statusText = document.querySelector(".status");
         statusText.classList.remove("hidden");
