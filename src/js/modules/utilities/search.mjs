@@ -12,6 +12,10 @@ export function search(data) {
     console.log(result)
     window.localStorage.removeItem("search");
     window.localStorage.setItem("search", JSON.stringify(result));
-    window.location.href = `/pages/listings.html?searchTerm=${searchTerm}`
+    if(window.location.pathname === "/semester-project-2/index.html" || window.location.pathname === "/"){
+      window.location.href = `pages/listings.html?searchTerm=${searchTerm}`;
+    }else{
+      window.location.href = `listings.html?searchTerm=${searchTerm}`;
+    }
   });
 }
