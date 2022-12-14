@@ -61,7 +61,7 @@ export function specificHtml(data) {
   </div>
   <div class = "description mx-3 mb-5">
     <h2 class = "text-center">Description</h2>
-    <p>${data.description}</p>
+    <p>${data.description !== null ? data.description : "The author of this post did not provide a description"}</p>
   </div>
   <div class="text-success">
     <hr>
