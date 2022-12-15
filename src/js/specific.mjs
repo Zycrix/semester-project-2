@@ -5,9 +5,9 @@ import * as urls from "./modules/api/urls.mjs";
 import { specificHtml } from "./modules/utilities/specificHtml.mjs";
 import { makeBid } from "./modules/api/makeBid.mjs";
 import { search } from "./modules/utilities/search.mjs";
-console.log("start")
+
 //Check if the user is logged in and make adjustments
-loggedIn();
+const signedIn = loggedIn();
 
 //Search function 
 const data = await apiCall("get", "listings");
@@ -21,20 +21,35 @@ const id = queryString.get("id");
 const endpoint = urls.listing + id + "?&_bids=true&_seller=true";
 
 const result = await apiCall("get", endpoint);
-console.log(result)
+
 //Build the page
 specificHtml(result);
 
 //Add event listener on bid form
+const user = JSON.parse(window.localStorage.getItem("user"));
+
 const bidForm = document.querySelector("#bid-form");
 
-bidForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
+if(signedIn){
 
-  const newResult = await makeBid(result);
+  bidForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  if (newResult) {
-    console.log(newResult);
-    // specificHtml(newResult);
-  }
-});
+    const bid = document.querySelector("#bid").value;
+    const newResult = await makeBid(result);
+    
+    if (newResult) {
+      result.bids.push({amount: Number(bid), bidderName: user.name});
+      console.log(result);
+      specificHtml(result);
+      
+      const bidStatus = document.querySelector(".bid-status");  
+      bidStatus.classList.remove("hidden");
+      bidStatus.classList.remove("text-danger");
+      bidStatus.classList.add("text-success");
+      bidStatus.innerHTML = "Success!";
+    }
+  });
+}else{
+  bidForm.remove();
+}

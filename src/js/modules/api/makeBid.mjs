@@ -28,11 +28,6 @@ export async function makeBid(data) {
       const endpoint = urls.profile + user;
       const update = await apiCall("get", endpoint);
       window.localStorage.setItem("user", JSON.stringify(update));
-      currentContainer.innerHTML = bid;
-      bidStatus.classList.remove("hidden");
-      bidStatus.classList.remove("text-danger");
-      bidStatus.classList.add("text-success");
-      bidStatus.innerHTML = "Success!";
       loggedIn();
       return result;
     } else {

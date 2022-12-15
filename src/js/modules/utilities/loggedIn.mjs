@@ -1,5 +1,9 @@
-export function loggedIn() {
+export function loggedIn(check) {
   if (window.localStorage.getItem("token")) {
+    if(check){
+      return true;
+    };
+
     const user = JSON.parse(window.localStorage.getItem("user"));
   
     //Show the complete menu
@@ -32,5 +36,8 @@ export function loggedIn() {
       window.localStorage.clear();
       window.location.reload();
     });
+    return true;
+  }else{
+    return false;
   }
 }

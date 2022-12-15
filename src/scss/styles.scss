@@ -73,6 +73,9 @@ main {
   width: 90%;
   margin: 0 auto;
 }
+.card{
+  cursor: pointer;
+}
 
 @include media-breakpoint-up(sm){
   .listing{
@@ -182,7 +185,7 @@ main {
     margin: 0 auto;
   }
   .new-listing-button{
-    width: 5%;
+    width: 5% !important;
     left: 79% !important;
   }
   .profile-dropdown{
