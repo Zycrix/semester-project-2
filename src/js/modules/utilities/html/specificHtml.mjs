@@ -1,4 +1,4 @@
-import { timeDiff } from "./calcDiff.mjs";
+import { timeDiff } from "../calcDiff.mjs";
 export function specificHtml(data) {
   const container = document.querySelector(".content-container");
 
@@ -14,6 +14,7 @@ export function specificHtml(data) {
     ends = `${date.getDate()}/${date.getMonth() + 1}-${date.getFullYear()} 0${date.getHours()}:0${date.getMinutes()}`;
   }
   const remaining = timeDiff(data.endsAt);
+  console.log(remaining )
 
   console.log(data);
   container.innerHTML = `
@@ -46,7 +47,7 @@ export function specificHtml(data) {
     <div class="vr"></div>
     <div>
       <p class="m-0">${remaining}</p>
-      <p>Left</p>
+      <p>${remaining !== "Ended" ? "Left" : ""}</p>
     </div>
   </div>
   <div class = "make-bid mx-auto"> 
@@ -139,5 +140,10 @@ export function specificHtml(data) {
     data.tags.forEach((e) => {
       tagsContainer.innerHTML += `<span class = "tag m-1 p-2 bg-primary rounded-3">${e}</span>`;
     });
+  }
+  if(remaining === "Ended"){
+    return false;
+  }else{
+    return true;
   }
 }

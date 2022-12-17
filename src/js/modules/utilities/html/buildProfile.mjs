@@ -1,6 +1,6 @@
-import { apiCall } from "../api/apiCall.mjs";
-import * as urls from "../api/urls.mjs";
-import { loggedIn } from "./loggedIn.mjs";
+import { apiCall } from "../../api/apiCall.mjs";
+import * as urls from "../../api/urls.mjs";
+import { loggedIn } from "../loggedIn.mjs";
 export async function buildProfile(data, edit){
   const container = document.querySelector(".profile-container");
 

@@ -2,9 +2,19 @@ import "../../node_modules/bootstrap/dist/js/bootstrap.bundle.js";
 import { loggedIn } from "./modules/utilities/loggedIn.mjs";
 import { apiCall } from "./modules/api/apiCall.mjs";
 import * as urls from "./modules/api/urls.mjs";
-import { specificHtml } from "./modules/utilities/specificHtml.mjs";
+import { specificHtml } from "./modules/utilities/html/specificHtml.mjs";
 import { makeBid } from "./modules/api/makeBid.mjs";
 import { search } from "./modules/utilities/search.mjs";
+import { createListing } from "./modules/utilities/newListing/createListing.mjs";
+import { tooltip } from "./modules/utilities/initTooltips.mjs";
+
+//Setup bootstrap tooltips
+
+tooltip();
+
+//Set up new listing function 
+
+createListing();
 
 //Check if the user is logged in and make adjustments
 const signedIn = loggedIn();
@@ -23,12 +33,19 @@ const endpoint = urls.listing + id + "?&_bids=true&_seller=true";
 const result = await apiCall("get", endpoint);
 
 //Build the page
-specificHtml(result);
+const title = document.querySelector("title");
+title.innerHTML += `${result.title}`;
+
+const status = specificHtml(result);
 
 //Add event listener on bid form
 const user = JSON.parse(window.localStorage.getItem("user"));
 
 const bidForm = document.querySelector("#bid-form");
+
+if(!status){
+  bidForm.remove();
+}
 
 if(signedIn){
 

@@ -16,8 +16,10 @@
   width: 100%;
   display: flex;
   max-height: 70vh;
+  min-height: 10vh;
   overflow-x: scroll;
   padding-left: 10vw;
+  -webkit-overflow-scrolling: touch;
 }
 .listing {
   min-width: 80%;
@@ -35,12 +37,18 @@
   object-fit: cover;
 }
 main {
-  min-height: calc(100vh - 163px);
+  min-height: calc(100vh - 148px);
+}
+li{
+  // cursor: pointer;
+}
+.disabled{
+  cursor: default !important;
 }
 .profile-picture, .profile-image {
   aspect-ratio: 1/1;
   object-fit: cover;
-    &.profile-picture{
+    &.dropdown-profile{
       width: 60%;
     }
 }
@@ -76,6 +84,17 @@ main {
 .card{
   cursor: pointer;
 }
+.profile-picture{
+  width:100%;
+}
+.loader {
+  width: 60px;
+  aspect-ratio: 4;
+  background: radial-gradient(circle closest-side,#000 90%,#0000) 0/calc(100%/3) 100% space;
+  clip-path: inset(0 100% 0 0);
+  animation: dots 1s steps(4) infinite;
+}
+@keyframes dots {to{clip-path: inset(0 -34% 0 0)}}
 
 @include media-breakpoint-up(sm){
   .listing{
@@ -112,7 +131,7 @@ main {
   .listing{
     min-width:35%;
   }
-  .profile-picture{
+  .dropdown-profile{
     width:50% !important;
   }
   .card{
@@ -134,7 +153,7 @@ main {
   .listing{
     min-width: 30%;
   }
-  .profile-picture{
+  .dropdown-profile{
     width:30% !important;
   }
   .profile-dropdown{
@@ -160,7 +179,7 @@ main {
   .listing{
     min-width: 20%;
   }
-  .profile-picture{
+  .dropdown-profile{
     width:20% !important;
   }
   .profile-dropdown{

@@ -38,6 +38,10 @@ export function loggedIn(check) {
     });
     return true;
   }else{
+    if(window.innerWidth > 1200){
+      const registerButton = document.querySelector("#register");
+      registerButton.classList.remove("hidden");
+    }
     return false;
   }
 }

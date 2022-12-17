@@ -16,6 +16,8 @@ export function createCards(data, counter, index){
 
   let i = index !== undefined ? index : 0;
 
+  container.innerHTML = "";
+  
   for(i; i < count; i++){
     const date = new Date(data[i].created);
     const posted = `${date.getDate()}/${date.getMonth() + 1}-${date.getFullYear()}`;

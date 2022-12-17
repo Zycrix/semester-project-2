@@ -17,5 +17,9 @@ export function timeDiff(timeValue) {
   const newHours = hours - days * 24 - 1; //Minus one to adjust for timezone
   const newMin = minutes - hours * 60;
 
+  if(days < 0){
+    return "Ended"
+  };
+
   return `${days}D ${newHours}H ${newMin}M`;
 }

@@ -1,9 +1,14 @@
 import "../../node_modules/bootstrap/dist/js/bootstrap.bundle.js";
 import { fetchAll } from "./modules/api/fetchAll.mjs";
 import { removeEnded } from "./modules/filters/removeEnded.mjs";
-import { createCards } from "./modules/utilities/cardsHtml.mjs";
+import { createCards } from "./modules/utilities/html/cardsHtml.mjs";
 import { loggedIn } from "./modules/utilities/loggedIn.mjs";
 import { search } from "./modules/utilities/search.mjs";
+import { tooltip } from "./modules/utilities/initTooltips.mjs";
+
+//init tooltips
+
+tooltip();
 
 loggedIn();
 

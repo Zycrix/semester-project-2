@@ -5,10 +5,9 @@ import validate from "./modules/utilities/validate.mjs";
 import { apiCall } from "./modules/api/apiCall.mjs";
 import { search } from "./modules/utilities/search.mjs";
 
-const data = await apiCall("get", "listings")
-
 //Search function 
 
+const data = await apiCall("get", "listings")
 search(data);
 
 //Check if the user was sent trough the register button

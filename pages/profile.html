@@ -3,12 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="../dist/css/styles.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name = "description" content = "Welcome to Great Deals! This is an auction site for noroff students selling anything from furniture to pets and everything in between!"/>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
     />
-    <title>Great deals</title>
+    <title>Great deals | </title>
   </head>
   <body>
     <header class="p-3 text-bg-dark">
@@ -30,8 +32,6 @@
               <li><a href="../index.html" class="nav-link px-2 text-secondary dropdown-item">Home</a></li>
               <li><a href="listings.html" class="nav-link px-2 text-secondary dropdown-item">Listings</a></li>
               <li><a href="profile.html" class="nav-link px-2 text-primary hidden dropdown-item">Profile</a></li>
-              <li><a href="#" class="nav-link px-2 text-secondary hidden dropdown-item">My Bids</a></li>
-              <li><a href="#" class="nav-link px-2 text-secondary hidden dropdown-item">My Listings</a></li>
             </ul>
           </div>
           <form class="col-6" role="search">
@@ -46,11 +46,11 @@
           <div class="text-end col-3">
             <div class="login-buttons">
               <a href="login.html" type="button" class="btn btn-outline-light">Login</a>
-              <a href="login.html?page=register" type="button" class="btn btn-primary hidden">Sign-up</a>
+              <a href="login.html?page=register" type="button" class="btn btn-primary hidden" id = "register">Sign-up</a>
             </div>
             <div class="user hidden justify-content-end">
               <div class="dropdown">
-                <a class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="dropdown-toggle dropdown-profile" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <img src="" alt="Profile picture" class="hidden profile-picture rounded-circle md-w-50" />
                 </a>
                 <ul class="dropdown-menu py-0 profile-dropdown">
@@ -70,16 +70,16 @@
     </header>
     <main>
       <div class = "profile-container">
-        
+        <div class="loader my-5 mx-auto"></div>
       </div>
-      <div class="text-dark profile-divider">
+      <div class="text-dark profile-divider status-container">
         <hr>
       </div>
       <div class = "content-container profile-cards d-flex flex-wrap justify-content-center">
-        
+        <div class="loader my-5"></div>
       </div>
     </main>
-    <div class = "position-fixed bottom-1 start-84 ratio ratio-1x1 w-10 hidden new-listing-button">
+    <div class = "position-fixed bottom-1 start-84 ratio ratio-1x1 w-10 hidden new-listing-button" data-bs-toggle="tooltip" data-bs-title = "Create a new listing" data-bs-placement="left">
       <button type = "button" class = "material-symbols-outlined btn text-center btn-info rounded-circle" data-bs-toggle="modal" data-bs-target="#new-listing">add</button>
     </div>
     <div class="modal fade" id="new-listing" tabindex="-1" aria-hidden="true">
@@ -98,22 +98,19 @@
               <label for = "description" class = "form-label">Description:</label>
               <textarea id = "description" class = "form-control" type = "text"></textarea>
 
-              <label for = "tags" class = "form-label">Tags:</label>
+              <label for = "tags" class = "form-label">Tags(Comma divided ex: "Sports, Cars, Art"):</label>
               <input id = "tags" class = "form-control" type = "text">
 
               <label for = "media" class = "form-label">Images:</label>
               <input id = "media" class = "form-control" type = "url">
 
               <label for = "end-date" class = "form-label">Ending date:</label>
-              <input id = "end-date" class = "form-control" type = "date">
-
-              <label for = "end-time" class = "form-label">Ending time(Required):</label>
-              <input id = "end-time" class = "form-control" type = "time">
+              <input id = "end-date" class = "form-control" type = "datetime-local">
             </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary submit-avatar">Post listing</button>
+            <button type="button" id = "new-listing-button" class="btn btn-primary">Post listing</button>
           </div>
         </div>
       </div>

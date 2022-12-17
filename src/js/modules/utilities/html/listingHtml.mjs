@@ -1,4 +1,4 @@
-import { timeDiff } from "./calcDiff.mjs";
+import { timeDiff } from "../calcDiff.mjs";
 /**
  * Creates listing cards based on content array passed as argument
  * @param {Array} data Array with content from api
@@ -14,6 +14,7 @@ export function listingHtml(data, container, type) {
     end = 10;
   }
   const contentContainer = document.querySelector(`.${container}`);
+  contentContainer.classList.remove("justify-content-center");
   contentContainer.innerHTML = "";
 
   for (let i = 0; i < end; i++) {
