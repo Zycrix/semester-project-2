@@ -57,9 +57,11 @@ npm run server
 
 | Resource         | Url |
 |------------------|---------------|
-| Gantt Chart      | [Gantt Chart] |
+| Gantt Chart      | [Gantt Chart](https://github.com/Zycrix/semester-project-2/blob/master/media/Gantt%20chart.jpg) |
 | Design prototype | [XD Prototype](https://xd.adobe.com/view/23212e35-b2a5-46dd-8f85-4d06267f44a7-7672/grid) |
 | Style guide      | [XD Style Guide](https://xd.adobe.com/view/97674d88-a89d-43d3-ab9f-ff9e33420154-c234/)|
 | Kanban board     | [Github projects](https://github.com/users/Zycrix/projects/1/views/1) |
 | Repository       | [Github](https://github.com/Zycrix/semester-project-2) |
 | Hosted demo      | [Github Pages](https://zycrix.github.io/semester-project-2/) |
+
+[![Pages deploy status](https://github.com/Zycrix/semester-project-2/actions/workflows/static.yml/badge.svg)](https://github.com/Zycrix/semester-project-2/actions/workflows/static.yml)
