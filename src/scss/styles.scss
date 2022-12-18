@@ -48,9 +48,9 @@ li{
 .profile-picture, .profile-image {
   aspect-ratio: 1/1;
   object-fit: cover;
-    &.dropdown-profile{
-      width: 60%;
-    }
+}
+.dropdown-profile{
+  width: 60% !important;
 }
 .carousel-container {
   position: relative;

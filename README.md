@@ -66,3 +66,11 @@ npm run server
 | Hosted demo      | [Github Pages](https://zycrix.github.io/semester-project-2/) |
 
 [![Pages deploy status](https://github.com/Zycrix/semester-project-2/actions/workflows/static.yml/badge.svg)](https://github.com/Zycrix/semester-project-2/actions/workflows/static.yml)
+
+### References:
+Bootstrap docs: https://getbootstrap.com/docs/5.2/getting-started/introduction/ <br>
+Noroff api docs <br>
+Stack overflow: https://stackoverflow.com/ <br>
+Google fonts icons: https://fonts.google.com/icons <br>
+Stock images: https://www.pexels.com/nb-no/ <br>
+My own previous works: https://github.com/Zycrix?tab=repositories
