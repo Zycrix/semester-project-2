@@ -10,7 +10,9 @@ export async function createListing(){
     console.log(body);
     if(body){
       try{
+        console.log("Fired")
         const result = await apiCall("post", "listing", body);
+        console.log(result)
         if(result.id){
           if(window.location.pathname === "/"){
             window.location.href = `pages/specific.html?id=${result.id}`;  

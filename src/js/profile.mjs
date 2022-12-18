@@ -7,6 +7,7 @@ import { createCards } from "./modules/utilities/html/cardsHtml.mjs";
 import { search } from "./modules/utilities/search.mjs";
 import { tooltip } from "./modules/utilities/initTooltips.mjs";
 import { auth } from "./modules/utilities/unauthorized.mjs";
+import { createListing } from "./modules/utilities/newListing/createListing.mjs";
 
 //init tooltips
 
@@ -22,6 +23,8 @@ if(status){
   const data = await apiCall("get", "listings");
   search(data);
 
+  createListing();
+  
   //check if page should display logged in user's profile or another user's profile
   const query = new URLSearchParams(document.location.search);
   let name = query.get("name")

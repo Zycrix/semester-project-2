@@ -5,12 +5,15 @@ import { createCards } from "./modules/utilities/html/cardsHtml.mjs";
 import { loggedIn } from "./modules/utilities/loggedIn.mjs";
 import { search } from "./modules/utilities/search.mjs";
 import { tooltip } from "./modules/utilities/initTooltips.mjs";
+import { createListing } from "./modules/utilities/newListing/createListing.mjs";
 
 //init tooltips
 
 tooltip();
 
 loggedIn();
+
+createListing();
 
 const query = document.location.search;
 const params = new URLSearchParams(query);

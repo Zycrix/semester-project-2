@@ -4,9 +4,6 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "vite-build": "vite build",
-    "preview": "vite preview",
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css",
     "server": "live-server"
@@ -17,8 +14,7 @@
     "lint-staged": "^13.0.4",
     "live-server": "^1.2.2",
     "prettier": "^2.8.0",
-    "sass": "^1.56.1",
-    "vite": "^3.2.3"
+    "sass": "^1.56.1"
   },
   "dependencies": {
     "bootstrap": "^5.2.3",

@@ -2,10 +2,11 @@ export function getData(){
   const title = document.querySelector("#title").value;
   const description = document.querySelector("#description").value;
   const tagInput = document.querySelector("#tags").value;
-  const media = document.querySelector("#media").value;
+  const mediaInput = document.querySelector("#media").value;
   const endDate = document.querySelector("#end-date").value;
   const tags = tagInput.split(", ") !== [''] ? tagInput.split(", ") : undefined;
-
+  const media = mediaInput.split(", ") !== [''] ? mediaInput.split(", ") : undefined;
+  
   const values = {
     title: title !== "" ? title : undefined,
     description: description !== "" ? description : undefined,

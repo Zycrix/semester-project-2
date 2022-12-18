@@ -8,12 +8,15 @@ import { loggedIn } from "./modules/utilities/loggedIn.mjs";
 import { search } from "./modules/utilities/search.mjs";
 import { tooltip } from "./modules/utilities/initTooltips.mjs";
 import { hScroll } from "./modules/utilities/horizontalScroll.mjs";
+import { createListing } from "./modules/utilities/newListing/createListing.mjs";
 
 //init tooltips
 
 tooltip();
 
 loggedIn();
+
+createListing();
 
 const data = await fetchAll("activeListings");
 
