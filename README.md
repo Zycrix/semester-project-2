@@ -79,3 +79,9 @@ Stack overflow: https://stackoverflow.com/ <br>
 Google fonts icons: https://fonts.google.com/icons <br>
 Stock images: https://www.pexels.com/nb-no/ <br>
 My own previous works: https://github.com/Zycrix?tab=repositories
+
+### Contact
+
+[Linkedin](https://www.linkedin.com/in/kristoffer-mikkelsen-a83232112/)</br>
+[Facebook](https://www.facebook.com/kristoffer.mikkelsen.75)</br>
+[Email](mailto:kristoffer.mikkelsen98@gmail.com)
