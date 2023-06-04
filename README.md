@@ -1,5 +1,6 @@
 # Semester project 2
 
+![Image of the live site](/media/live-site.png)
 This repository contains my delivery for Semester project 2.
 
 ## About this project
